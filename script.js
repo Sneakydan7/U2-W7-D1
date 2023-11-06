@@ -76,7 +76,6 @@ class Pet {
     }
   }
 }
-const myPets = [];
 
 form.onsubmit = function (event) {
   new Pet(petBox.value, ownerBox.value, speciesBox.value, breedBox.value);
@@ -84,15 +83,25 @@ form.onsubmit = function (event) {
   let listItem = document.createElement("li");
 
   listItem.innerText =
+    "name:" +
+    " " +
     petBox.value +
+    " " +
+    "owner:" +
     " " +
     ownerBox.value +
     " " +
+    "species:" +
+    " " +
     speciesBox.value +
+    " " +
+    "breed:" +
     " " +
     breedBox.value +
     " ";
   let list = document.getElementById("petList");
   list.appendChild(listItem);
   event.preventDefault();
+
+  form.reset();
 };
